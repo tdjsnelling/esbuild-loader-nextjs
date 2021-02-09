@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
-export default function Home({ didRun = false }) {
+export default function Page2() {
   return (
     <div className={styles.container}>
       <Head>
@@ -11,16 +11,9 @@ export default function Home({ didRun = false }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          <code className={styles.code}>getServerSideProps</code> {didRun ? 'ran sucessfully' : 'did not run'}
-        </p>
-
-        <Link href="/page2" passHref>
-          <a>Click me to go to page 2</a>
+        <Link href="/" passHref>
+          <a>Now click me to go to navigate back</a>
         </Link>
       </main>
 
@@ -38,7 +31,3 @@ export default function Home({ didRun = false }) {
   )
 }
 
-export const getServerSideProps = async () => {
-  console.log('getServerSideProps')
-  return { props: { didRun: true } }
-}
